@@ -15,7 +15,7 @@
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
 
-set -eu
+cd $(dirname "$(readlink -f "$0")") # canonicalise directory
 
 if [ "$#" -ne 1 ]; then
     echo "usage: $(basename "$0") NAME"
