@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh -eu
 #
 # Copyright (c) 2015 Richard Mortier <mort@cantab.net>. All Rights Reserved.
 # Copyright (c) 2015 Thomas Gazagnaire <thomas@gazagnaire.org>.
