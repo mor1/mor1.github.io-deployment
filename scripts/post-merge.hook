@@ -1,4 +1,4 @@
-#!/bin/sh -eu
+#!/bin/sh -eux
 ### BEGIN INIT INFO
 # Provides:          mort.io
 # Required-Start:    $local_fs $network $syslog $time
