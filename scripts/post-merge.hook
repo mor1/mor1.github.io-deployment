@@ -42,6 +42,6 @@ unset GIT_DIR
 ROOT=$(git rev-parse --show-toplevel)
 KERNEL=$ROOT/xen/$(cat "$ROOT/xen/latest")
 
-if [ -f "$KERNEL/mir-${HTTP}.xen.bz2" ]; then
+if [ -f "$KERNEL/${HTTP//.}.xen.bz2" ]; then
     "$ROOT/scripts/deploy.sh" $HTTP
 fi
