@@ -37,7 +37,7 @@
 cd $(dirname "$(readlink -f "$0")") # canonicalise directory
 
 HTTP=mort.io
-VM=${HTTP//.}
+VM=$(echo $HTTP | sed 's\.//g')
 
 unset GIT_DIR
 ROOT=$(git rev-parse --show-toplevel)
