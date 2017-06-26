@@ -23,10 +23,11 @@ if [ "$#" -ne 1 ]; then
 fi
 
 NAME=$1
+VM=$2
 
 ROOT=$(git rev-parse --show-toplevel)
 SCRIPTS=$ROOT/scripts
 
-"$SCRIPTS"/prepare-config.sh "$NAME"
+"$SCRIPTS"/prepare-config.sh "$NAME" "$VM"
 "$SCRIPTS"/destroy-vm.sh "$NAME"
-"$SCRIPTS"/create-vm.sh "$NAME"
+"$SCRIPTS"/create-vm.sh "$VM"

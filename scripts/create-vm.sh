@@ -22,11 +22,10 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-NAME=$1
+VM=$1
 
 ROOT=$(git rev-parse --show-toplevel)
 KERNEL=$ROOT/xen/$(cat "$ROOT/xen/latest")
-VM="${NAME//.}"
 
 cd "$KERNEL"
 
