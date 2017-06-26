@@ -17,7 +17,7 @@
 
 cd $(dirname "$(readlink -f "$0")") # canonicalise directory
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -ne 2 ]; then
     echo "usage: $(basename "$0") NAME"
     exit 1
 fi
