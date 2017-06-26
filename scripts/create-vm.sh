@@ -26,10 +26,10 @@ NAME=$1
 
 ROOT=$(git rev-parse --show-toplevel)
 KERNEL=$ROOT/xen/$(cat "$ROOT/xen/latest")
-VM="mir-$NAME"
+VM="${NAME//.}"
 
 cd "$KERNEL"
 
 rm -f "$VM.xen"
 bunzip2 -k "$VM.xen.bz2"
-sudo xl create "$NAME.xl"
+sudo xl create "$VM.xl"

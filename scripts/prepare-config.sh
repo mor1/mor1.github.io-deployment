@@ -23,6 +23,7 @@ if [ "$#" -ge 3 ]; then
 fi
 
 NAME=$1
+FNAME=${1//.}
 
 if [ "$#" -eq 1 ]; then DISK=""; else DISK=$2; fi
 
@@ -31,6 +32,6 @@ KERNEL=$ROOT/xen/$(cat "$ROOT/xen/latest")
 
 cd "$ROOT"
 
-sed -e "s,@NAME@,$NAME,g; s,@KERNEL@,$KERNEL/mir-$NAME.xen,g; s:@DISK@:$DISK:g" \
+sed -e "s,@NAME@,$NAME,g; s,@KERNEL@,$KERNEL/$FNAME.xen,g; s:@DISK@:$DISK:g" \
     < xl.conf.in \
-    >| "$KERNEL/$NAME.xl"
+    >| "$KERNEL/$FNAME.xl"
